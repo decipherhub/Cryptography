@@ -18,18 +18,33 @@ $$
 ## Arithmetic operations
 ### Add
 RNS에서의 덧셈은 단순한 residue끼리의 덧셈을 수행하여 이루어진다. 뺄셈 및 곱셈도 마찬가지로 수행된다.
-$$ \begin{align} \{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 +y_1 (mod \space m_1), \\ & x_2 +y_2 (mod \space m_2), \\ &..., \\ &x_k +y_k (mod \space m_k)\} \end{align} $$
+$$ 
+\begin{align} 
+\{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 +y_1 (mod \space m_1), \\ & x_2 +y_2 (mod \space m_2), \\ &..., \\ &x_k +y_k (mod \space m_k)\} 
+\end{align} 
+$$
 
 ### Subtract
-$$ \begin{align} \{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 -y_1 (mod \space m_1), \\ & x_2 -y_2 (mod \space m_2), \\ &..., \\ &x_k -y_k (mod \space m_k)\} \end{align} $$
+$$ 
+\begin{align} 
+\{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 -y_1 (mod \space m_1), \\ & x_2 -y_2 (mod \space m_2), \\ &..., \\ &x_k -y_k (mod \space m_k)\} 
+\end{align} 
+$$
 
 ### Multiply
-$$ \begin{align} \{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 \cdot y_1 (mod \space m_1), \\ & x_2 \cdot y_2 (mod \space m_2), \\ &..., \\ &x_k \cdot y_k (mod \space m_k)\} \end{align} $$
+$$ 
+\begin{align} 
+\{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 \cdot y_1 (mod \space m_1), \\ & x_2 \cdot y_2 (mod \space m_2), \\ &..., \\ &x_k \cdot y_k (mod \space m_k)\} 
+\end{align} 
+$$
 
 ### Divide
 나눗셈은 나누는 수의 모듈로 역원을 이용해 계산한다. 따라서 다음과 같이 수행된다.
 
-$$ \begin{align} \{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 \cdot y_1^{-1} (mod \space m_1), \\ & x_2 \cdot y_2^{-1} (mod \space m_2), \\ &..., \\ &x_k \cdot y_k^{-1} (mod \space m_k)\} \end{align} $$
+$$ 
+\begin{align} \{x_1, x_2, x_3, ..., x_k\} +\{y_1, y_2, y_3, ..., y_k\} =\{& x_1 \cdot y_1^{-1} (mod \space m_1), \\ & x_2 \cdot y_2^{-1} (mod \space m_2), \\ &..., \\ &x_k \cdot y_k^{-1} (mod \space m_k)\} 
+\end{align} 
+$$
 
 ### Comparison
 동일성의 경우 두 수의 residue들이 동일하면 두 수도 동일하다고 판단한다.
