@@ -34,6 +34,7 @@ export default {
     },
     footer: {
       createdWith: "Created with",
+      maintainedBy: "Maintained by"
     },
     graph: {
       title: "그래프 뷰",

@@ -34,6 +34,7 @@ export default {
     },
     footer: {
       createdWith: "Gemaakt met",
+      maintainedBy: "Maintained by"
     },
     graph: {
       title: "Grafiekweergave",

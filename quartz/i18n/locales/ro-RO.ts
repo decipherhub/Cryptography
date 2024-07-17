@@ -34,6 +34,7 @@ export default {
     },
     footer: {
       createdWith: "Creat cu",
+      maintainedBy: "Maintained by"
     },
     graph: {
       title: "Graf",

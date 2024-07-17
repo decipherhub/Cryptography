@@ -34,6 +34,7 @@ export default {
     },
     footer: {
       createdWith: "Créé avec",
+      maintainedBy: "Maintained by"
     },
     graph: {
       title: "Vue Graphique",

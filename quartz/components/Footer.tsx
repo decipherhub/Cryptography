@@ -18,6 +18,10 @@ export default ((opts?: Options) => {
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
         </p>
+        <p>
+          {i18n(cfg.locale).components.footer.maintainedBy}{" "}
+          <a href="https://decipher.ac/">Decipher</a>
+        </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>

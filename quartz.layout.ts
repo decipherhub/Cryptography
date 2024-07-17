@@ -7,7 +7,7 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/decipherhub/FHE-SecondBrain",
+      GitHub: "https://github.com/decipherhub/Cryptography",
       "Medium": "https://medium.com/decipher-media",
       "Youtube": "https://www.youtube.com/@decipher-media",
     },

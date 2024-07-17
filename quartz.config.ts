@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🔑 FHE-SecondBrain",
+    pageTitle: "Cryptography@Decipher",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
