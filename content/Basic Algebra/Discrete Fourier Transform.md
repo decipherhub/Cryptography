@@ -1,6 +1,3 @@
----
-title: Discrete Fourier Transform
----
 
 # Definition
 The Discrete Fourier Transform (DFT) refers to the Fourier transform applied to discrete values (discrete time to discrete frequency). When computed using the Fast Fourier Transform (FFT), the DFT can be calculated quickly in O(nlogn) time for n values. Therefore, it can be used to efficiently compute polynomial multiplication or vector convolution, which would otherwise require $O(n^2)$ time (where n is the degree of the polynomial).

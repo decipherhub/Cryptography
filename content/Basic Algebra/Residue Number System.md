@@ -1,6 +1,3 @@
----
-title: Residue Number System
----
 Residue Number System(RNS)은 정수를 표현하고 연산하는 데에 사용되는 number system의 하나로, 병렬 연산에 유리하다는 특징이 있다. RNS에서는 정수를 여러 개의 서로 다른 서로소인 정수들(이후 기수 집합이라고 부르게 되는 것)으로 표현하며, 기반이 되는 원리에는 [[Chinese remainder theorem]]가 있다. 즉 서로소인 정수들이 주어졌을 때, 이들에 대한 연립 합동식의 해가 유일하다는 것에 기반하여 여러 서로소 정수들로 하나의 정수를 나타낼 수 있는 것이다.
 
 ## RNS Representation

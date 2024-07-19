@@ -1,6 +1,3 @@
----
-title: Fast Fourier Transfrom
----
 # Definition
 Fast Fourier Transform (FFT) is a technique that utilizes the periodicity of the root of unity to perform the [[Discrete Fourier Transform]] in \(O(n \log n)\) time. [Root of Unity]([[Discrete Fourier Transform#^1735c9]]) has the following property: $$\omega^{n/2+j}=-\omega^j$$ Using this property, we can divide the DFT calculation of length \(N\) into two DFT calculations of length \(N/2\). This is known as the Danielson-Lanczos Lemma and forms the basis of the FFT.
 
