@@ -24,3 +24,4 @@
 - [[Discrete logarithm]]
 - [[ECDLP]]
 - [[Ideal]]
+- [[Abelian Group]]
