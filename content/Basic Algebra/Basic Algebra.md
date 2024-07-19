@@ -24,4 +24,3 @@
 - [[Discrete logarithm]]
 - [[ECDLP]]
 - [[Ideal]]
-
