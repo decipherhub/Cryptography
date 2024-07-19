@@ -1,18 +1,32 @@
-# Quartz v4
+# Cryptography SecondBrain
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Welcome to Cryptography SecondBrain, a comprehensive wiki covering a wide range of cryptographic topics from basic algebra to various Privacy Enhancing Technologies (PET). 📚🔒
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+Cryptography SecondBrain is an open-source project maintained by Decipher. Whether you are a beginner looking to learn about cryptography or an expert wanting to share your knowledge, we encourage you to contribute to our project. 🙌
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+Visit our website at [Cryptography SecondBrain](https://cryptography.decipher.ac) for more information.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## How to Get Involved
 
-## Sponsors
+If you are interested in contributing to Cryptography SecondBrain, please refer to our [Contribution guide](CONTRIBUTING.md). We welcome contributions of all kinds, including but not limited to:
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+- Adding new content
+- Editing existing content for clarity and accuracy
+- Reporting issues and suggesting improvements
+- Translating content into other languages
+
+For more details on how to get involved, please refer to our [Contribution guide](CONTRIBUTING.md).
+
+## Categories
+
+Our wiki is organized into the following categories. If you have suggestions for new categories within the scope of cryptography, please propose them via an issue. 📝
+
+- Basic Algebra
+- Basic Cryptography
+- Privacy Enhancing Technologies (PET)
+
+## Contact Us
+
+If you find any inaccuracies or issues with the management of this wiki, please contact us via email at decipher@contact.ac. 📧
+
+Thank you for your interest in Cryptography SecondBrain. Together, we can create a valuable resource for the cryptographic community. 🌐
