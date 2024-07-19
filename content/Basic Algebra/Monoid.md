@@ -7,6 +7,6 @@
 2. $S$에 항등원 $e \in S$가 존재한다.
 
 # 예시
-1. $(\mathbb{Z}, \times)$는 Monoid이다. 그러나 [Group]은 아니다.
+1. $(\mathbb{Z}, \times)$는 Monoid이다. 그러나 [[Group]]은 아니다.
 
-2. $(Mat_{2 \times 2}(\mathbb{R}), \times)$는 Monoid이다. 그러나 [Group]은 아니다.
+2. $(Mat_{2 \times 2}(\mathbb{R}), \times)$는 Monoid이다. 그러나 [[Group]]은 아니다.

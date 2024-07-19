@@ -1,6 +1,6 @@
 # Group의 정의
 
-집합 $G$ 위의 [Binary Operation] $*$ : $G \times G \rightarrow G$ 가 주어졌을 때, $G$와 $*$가 다음 조건을 만족하면 $G$와 $*$를 합쳐서 Group이라고 정의한다:
+집합 $G$ 위의 [[Binary Operation]] $*$ : $G \times G \rightarrow G$ 가 주어졌을 때, $G$와 $*$가 다음 조건을 만족하면 $G$와 $*$를 합쳐서 Group이라고 정의한다:
 
 1. $*$는 결합적이다 (associative).
 
