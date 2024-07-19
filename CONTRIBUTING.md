@@ -1,6 +1,6 @@
 # Contributing
 
-🎉 Thank you for being interested in contributing to the Cryptography@Decipher! 🎉
+🎉 Thank you for being interested in contributing to the Cryptography SecondBrain! 🎉
 
 Feel free to dive in. Read the following sections to learn about our workflow and standards. Whether you're looking to write documentation, report errors, or just ask questions, we appreciate all forms of contribution.
 
