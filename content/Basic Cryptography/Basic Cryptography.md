@@ -8,7 +8,7 @@
 - [[RSA]]
 - [[ElGamal]]
 - [[ECDSA]]
-- [[Post quantum cryptography]]
+- [[Post-Quantum Cryptography]]
 - [[Learning with Errors(LWE)]]
 - [[Ring Learning with Errors(RLWE)]]
 - [[Module Learning with Errors(MLWE)]]
