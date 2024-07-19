@@ -23,4 +23,5 @@
 - [[Elliptic Curves]]
 - [[Discrete logarithm]]
 - [[ECDLP]]
+- [[Ideal]]
 
