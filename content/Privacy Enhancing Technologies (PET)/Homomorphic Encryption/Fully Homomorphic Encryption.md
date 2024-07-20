@@ -1,4 +1,4 @@
-# Homomorphic Encryption (HE)
+# Fully Homomorphic Encryption (FHE)
 ## 정의
 암호화된 상태에서 연산을 수행할 수 있는 암호학 기법을 의미한다.
 
