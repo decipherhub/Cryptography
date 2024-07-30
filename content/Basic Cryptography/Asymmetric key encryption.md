@@ -55,3 +55,7 @@
 4. [[Elliptic Curves#Elliptic Curve Cryptography]]
 
     ECC(타원 곡선 암호)는 이산 로그 문제 중 타원 곡선에 기반한 [[ECDLP]](Elliptic Curve Discrete Logarithm Problem)을 기반으로 하는 시스템이다. 다른 프로토콜에 비해 비교적 작은 길이의 키를 사용하면서 높은 수준의 보안성을 제공하기 때문에 제한된 자원을 가진 모바일이나 블록체인과 같은 환경에서 널리 사용된다.
+
+## Comparison with [[Symmetric key encryption]]
+Refer to [[Symmetric key encryption#Comparison with Asymmetric key encryption]]
+
