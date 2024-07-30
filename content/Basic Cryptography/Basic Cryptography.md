@@ -2,8 +2,11 @@
 > [[Basic Cryptography]] introduces the fundamental principles and techniques of cryptography. This includes basic encryption and decryption methods, and the principles behind key cryptographic algorithms such as symmetric and asymmetric encryption.
 
 
-- [[Public key cryptography]]
-- [[Symmetric key cryptography]]
+- [[Asymmetric key encryption]]
+- [[Symmetric key encryption]]
+- [[AES]]
+- [[Block cipher]]
+- [[Stream cipher]]
 - [[Diffie-Hellman]]
 - [[RSA]]
 - [[ElGamal]]
