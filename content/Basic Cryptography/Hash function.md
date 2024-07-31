@@ -4,7 +4,7 @@ A hash function is a function that maps an input of any size to a fixed-size has
 2. Arbitrary length of input
 3. Fixed-sized output
 4. Efficiently computable
-![[Pasted image 20240731133352.png]]
+![[hash_function(1).png]]
 (A small change in plaintext leads to the big change in digest.)
 
 ## Cryptographic hash functions
@@ -19,7 +19,7 @@ Also, cryptographic hash function can be considered as a [[one-way function]].
 
 ### Funny Facts About Collision-Resistance
 Actually, collision-resistance does not mean that "there is no collision." It means that collisions cannot be found in **polynomial time**. For example, collisions for previously popular hash functions like MD5 and SHA-1 were found in 2007 and 2017, respectively. The image below shows PDF files that have different contents but the same hash values.
-![[Pasted image 20240731134110.png]]
+![[hash_function(2).png]]
 Therefore, hash functions such as SHA-2 or SHA-3, popular these days, are said to be secure because no collisions have been found **yet**.  There is also a [bounty](https://bitcointalk.org/index.php?topic=293382.0) offered for finding hash collisions of SHA-1, SHA-256, etc., in bitcoin script.
 
 ## Different Types of Hash Functions

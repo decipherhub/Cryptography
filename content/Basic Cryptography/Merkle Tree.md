@@ -2,7 +2,7 @@
 A [[Merkle Tree]] is a binary tree where each leaf node contains the hash of a data block, and each non-leaf node contains the hash of its child nodes. This structure provides efficient and secure verification of the contents in large data structures.
 
 ## Example
-![[Pasted image 20240731134705.png]]
+![[merkle_tree(1).png]]
 Consider a Merkle Tree with four data blocks $(L1, L2, L3, L4)$.
 1. Compute the hash of each data block.
     - $H(L1)$
@@ -28,4 +28,4 @@ For verification, following steps are needed:
 ## Merkle consistency proof
 A Merkle consistency proof is a method that enables one to verify that any two versions of a log are consistent: that is, the later version includes everything in the earlier version in the same order, and all new entries come after the entries in the older version. The consistency proof includes the root hash of each newly completed subtree since the last root hash was generated. For example, in the image below, Merkle consistency can be proved using $h_{1,4}$, $h'_{5,6}$ and $h'_{7,8}$.
 
-![[Pasted image 20240731140027.png]]
+![[merkle_tree(2).png]]

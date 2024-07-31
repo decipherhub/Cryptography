@@ -7,7 +7,7 @@ The Discrete Fourier Transform (DFT) refers to the Fourier transform applied to 
 ^1735c9
 
 The **n-th root of unity** is a concept that plays a crucial role in the computation of the DFT. Mathematically, an n-th root of unity is a complex number $\omega$ that satisfies $\omega^n=1$. Therefore, there can be n such $\omega$, each of which can be expressed as $\omega^k = e^{-2\pi ik/n}$, where k is an integer ranging from 0 to n−1, and i is the imaginary unit. These roots are uniformly distributed on the unit circle.
-![[root of unity.png]]
+![[root_of_unity(1).png]]
 [Image source](https://homepages.math.uic.edu/~jan/mcs472/discretefourier.pdf)
 
 # Discrete Fourier Transfrom
