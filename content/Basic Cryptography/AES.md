@@ -60,8 +60,8 @@ The ShiftRows step is a transposition step where the rows of the state array are
 The MixColumns step is a mixing operation that operates on the columns of the state array. Each column is treated as a four-term polynomial and multiplied by a fixed polynomial   
 $c(z)={03}_{16}\cdot z^{3}+{01}_{16}\cdot z^{2}+{01}_{16}\cdot z+{02}_{16}$ modulo $x^4 + 1$. More generally, this step can be represented as below.
 
-![[AES(4).png]]
+![[AES(3).png]]
 
 This step provides **diffusion** by mixing the bytes within each column, ensuring that the output bytes are influenced by multiple input bytes.
 
-![[AES(3).png]]
+![[AES(4).png]]
