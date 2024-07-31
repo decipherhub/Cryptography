@@ -15,3 +15,5 @@
 - [[Learning with Errors(LWE)]]
 - [[Ring Learning with Errors(RLWE)]]
 - [[Module Learning with Errors(MLWE)]]
+- [[Hash function]]
+- [[Merkle Tree]]
