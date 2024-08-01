@@ -17,3 +17,5 @@
 - [[Module Learning with Errors(MLWE)]]
 - [[Hash function]]
 - [[Merkle Tree]]
+- [[Digital Signature]]
+- [[Schnorr Signature]]
