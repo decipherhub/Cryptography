@@ -1,10 +1,10 @@
 ## Intro
 A block cipher is an encryption algorithm used in symmetric key encryption that encrypts plaintext in fixed-size blocks. The block size depends on the algorithm, but the length of the plaintext can be variable because block ciphers utilize modes of operation, which will be explained below. A block cipher can also be abstracted as a [[Pseudo-random Function]] where the message space is n bits and the key space is k bits.
 
-![[Pasted image 20240730165247.png]]
+![[block_cipher(1).png]]
 
 ## Design
-![[Pasted image 20240730172248.png]]
+![[block_cipher(2).png]]
 The basic flow of block cipher encryption is as follows:
 
 1. Expand the key into $r$ round keys via key expansion.

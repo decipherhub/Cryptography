@@ -2,7 +2,7 @@
 Stream cipher is a method of encrypting data where each bit or byte of the plaintext is encrypted sequentially, one at a time, using a corresponding bit or byte from a key stream. This approach differs from block ciphers, which encrypt fixed-size blocks of data. Stream ciphers are often used in scenarios requiring high-speed encryption and where data is transmitted in a continuous stream.
 
 ## Design
-![[Pasted image 20240730173718.png]]
+![[stream_cipher(1).png]]
 TODO(yuki)
 
 ## Types of stream ciphers

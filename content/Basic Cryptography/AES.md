@@ -50,18 +50,18 @@ The AddRoundKey step is a simple bitwise XOR operation between the state array a
 
 ### SubBytes
 The SubBytes step substitutes each byte with another byte according to a 8-bit substitution box(Sbox). The S-box provides non-linearity properties, leveraging multiplicative inverse over [[Finite Field|GF]]($2^8$).  
-![[Pasted image 20240730214809.png]]
+![[AES(1).png]]
 
 ### ShiftRows
 The ShiftRows step is a transposition step where the rows of the state array are shifted in certain offset cyclically to the left. The first row is left unchanged, the second row is shifted one byte to the left, the third row is shifted two bytes to the left, and the fourth row is shifted three bytes to the left. This step helps in **diffusion** by mixing the positions of the bytes in each row.
-![[Pasted image 20240730214817.png]]
+![[AES(2).png]]
 
 ### MixColumns
 The MixColumns step is a mixing operation that operates on the columns of the state array. Each column is treated as a four-term polynomial and multiplied by a fixed polynomial   
 $c(z)={03}_{16}\cdot z^{3}+{01}_{16}\cdot z^{2}+{01}_{16}\cdot z+{02}_{16}$ modulo $x^4 + 1$. More generally, this step can be represented as below.
 
-![[Pasted image 20240730220004.png]]
+![[AES(3).png]]
 
 This step provides **diffusion** by mixing the bytes within each column, ensuring that the output bytes are influenced by multiple input bytes.
 
-![[Pasted image 20240730214827.png]]
+![[AES(4).png]]
