@@ -12,5 +12,7 @@ We have the following categories in this wiki:
 - [[Privacy Enhancing Technologies (PET)]]: Advanced cryptography focused on privacy protection.
 - [[Blockchain]]: An introduction to blockchain technology, its structure, and its applications.
 
+If you are not familiar with mathematical symbols or notations, please refer to the [[Notations]] page.
+
 If you find any inaccuracies or issues with the management of this wiki, please contact us via email at <decipher@contact.ac>.
 
