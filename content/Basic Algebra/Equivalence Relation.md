@@ -1,4 +1,4 @@
-# 정의
+# Definition
 A [[Binary Relation]] $\sim$ on a set $X$ is called an equivalence relation on $X$ if it satisfies the following properties for all $a, b, c \in X$:
 
 1.  Reflexive
