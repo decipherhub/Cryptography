@@ -61,3 +61,6 @@
 - **$J(w, n)$**: The Jacobi symbol for $w$ modulo $n$, defined only for positive odd $n$, and can take values of $-1, 0, 1$.
 - **$J_n$**: The set of elements in $\mathbb{Z}_n^*$ with a Jacobi symbol of 1.
 - **$QR_n$**: The set of quadratic residues modulo $n$, elements that have a square root, defined as $QR_n = \{ e \in \mathbb{Z}_n : \exists r, r^2 \equiv e \mod n \}$.
+
+### Reference
+https://www.zkdocs.com/docs/zkdocs/notation/
