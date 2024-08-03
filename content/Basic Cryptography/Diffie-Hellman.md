@@ -1,7 +1,11 @@
-Diffie-Hellman 시스템은 두 사용자가 공개적으로 키를 교환하여 공통의 비밀 키를 생성할 수 있도록 하는 키 교환 프로토콜이다. Whitfield Diffie와 Martin Hellman이 1976년에 개발한 시스템으로 대칭키 암호 시스템에서 키 교환 문제를 해결하기 위해 고안되었다. 두 사용자는 서로의 공개 키를 사용하여 비밀 키를 생성하지만, 이 과정에서 비밀 키 자체는 교환되지 않는다. Diffie-Hellman은 [[Discrete logarithm problem]](DLP)에 기반한 보안성을 가지고 있다.
+The Diffie-Hellman system is a key exchange protocol that allows two users to generate a shared secret key by exchanging keys publicly. Developed by Whitfield Diffie and Martin Hellman in 1976, this system was designed to solve the key exchange problem in symmetric key cryptosystems. Although the users generate the secret key using each other's public keys, the secret key itself is never exchanged. The security of Diffie-Hellman is based on the [Discrete Logarithm Problem](DLP).
 
-다음은 Diffie-Hellman 프로토콜의 키 교환 방식을 나타내는 그림이다.
-![[diffie_hellman(1).png]]
-1. Alice와 Bob의 프라이빗키는 각각 $Z_p^*$의 원소(Alice: a, Bob: b)이고 퍼블릭키는 사전에 공유된 generator $g$에 각각 $g^a, g^b$ 연산을 한 결과이다.
-2. 서로의 퍼블릭키를 교환하고 각자의 프라이빗키를 위 그림과 같이 적용하면 서로 같은 $g^{ab}$라는 결과가 나오고 이것이 Alice와 Bob의 SHK(공유키)가 된다. (KDF: Dey Derivation Function으로서 해싱과 비트연산을 적용하여 암호키를 생성하는 함수)
-3. 여기서 Eve가 $A,B$ 값을 알아도 SHK를 알아낼 수 없다. 즉, $a$를 알면 공유받은 $B$로부터 $B^a = g^{ab}$ 를 쉽게 구할 수 있지만 $g^a, g^b$값을 안다고 해도 이것으로부터 $g^{ab}$값을 알아내는 것은 매우 어렵다.
+Below is a diagram illustrating the key exchange process of the Diffie-Hellman protocol.
+
+![Diffie-Hellman Key Exchange Process](diffie_hellman(1).png)
+
+1. **Private and Public Keys**: Alice and Bob each have private keys that are elements of \(Z_p^*\) (Alice's private key is \(a\), and Bob's private key is \(b\)). Their public keys are the results of computing \(g^a\) and \(g^b\) using a pre-shared generator \(g\).
+
+2. **Exchange and Derivation of Shared Key**: They exchange their public keys. By applying their own private keys as shown in the diagram, both arrive at the same result, \(g^{ab}\), which becomes their shared secret key (SHK). The Key Derivation Function (KDF) is used to apply hashing and bit operations to generate the cryptographic key from the shared key.
+
+3. **Security Against Interception**: Even if Eve, a potential eavesdropper, knows the values of \(A\) and \(B\), she cannot deduce the SHK. While knowing \(a\) allows one to easily compute \(B^a = g^{ab}\) from the shared \(B\), it is extremely difficult to compute \(g^{ab}\) from just knowing \(g^a\) and \(g^b\) without the private keys.
