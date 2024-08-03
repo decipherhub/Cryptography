@@ -11,5 +11,7 @@ We have the following categories in this wiki:
 - [[Basic Cryptography]]: An introduction to cryptographic principles and techniques.
 - [[Privacy Enhancing Technologies (PET)]]: Advanced cryptography focused on privacy protection.
 
+If you are not familiar with mathematical symbols or notations, please refer to the [[Notations]] page.
+
 If you find any inaccuracies or issues with the management of this wiki, please contact us via email at <decipher@contact.ac>.
 
