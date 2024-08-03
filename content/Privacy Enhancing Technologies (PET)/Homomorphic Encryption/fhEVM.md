@@ -27,7 +27,7 @@ Zama is a leading company applying FHE to blockchain and has developed the fhEVM
 
 2. **Submission Requirements**: To use fhEVM, users need to submit two things:
    - Encrypted data.
-   - A Zero-Knowledge Proof (ZKP) demonstrating the existence of the data before encryption.
+   - A [[Zero Knowledge Proofs]] demonstrating the existence of the data before encryption.
 
 3. **Decryption Methods**:
    - **Public Decryption**: After submitting encrypted data and ZKP, validators verify and upload the encrypted data on-chain. Validators decrypt and reveal the computation results.
