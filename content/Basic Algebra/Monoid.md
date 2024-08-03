@@ -1,12 +1,10 @@
-# Monoid의 정의
+# Definition of a Monoid
 
-집합 $S$ 위의 [Binary Operation] $*$ : $S \times S \rightarrow S$ 가 주어졌을 때, $S$와 $*$가 다음 조건을 만족하면 $S$와 $*$를 합쳐서 monoid라고 부른다:
+Given a [Binary Operation] $*$ : $S \times S \rightarrow S$ on a set $S$, the pair $(S, *)$ is called a monoid if it satisfies the following conditions:
 
-1. $*$는 결합적이다 (associative).
+1. $*$ is associative.
+2. There exists an identity element $e \in S$.
 
-2. $S$에 항등원 $e \in S$가 존재한다.
-
-# 예시
-1. $(\mathbb{Z}, \times)$는 Monoid이다. 그러나 [[Group]]은 아니다.
-
-2. $(Mat_{2 \times 2}(\mathbb{R}), \times)$는 Monoid이다. 그러나 [[Group]]은 아니다.
+# Examples
+1. $(\mathbb{Z}, \times)$ is a Monoid. However, it is not a [[Group]].
+2. $(Mat_{2 \times 2}(\mathbb{R}), \times)$ is a Monoid. However, it is not a [[Group]].

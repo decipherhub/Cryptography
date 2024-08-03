@@ -1,3 +1,5 @@
-일반적인 로그(Logarithm)란 지수 함수의 역함수, 어떤 수를 나타내기 위해 고정된 밑은 몇번 곱하여야 하는지를 나타낸다고 볼 수 있다. 즉, $a^x = b$를 만족하는 $x$를 가리킨다.
-이산 로그는 일반 로그와 같은 형태이지만 군론의 이산적인 대수 구조에서 정의된 연산이다. 이산 로그의 가장 단순한 형태는 $Z_p^*$ 에서 정의하는 것이다. $Z_p^*$의 집합이 $\{1, ..., p-1\}$이고 소수 $p$의 모듈로 곱셈에 대해 닫혀있다고 하자. $Z^*_p$의 어떤 수 $g$와 $y$가 주어졌을 때, $g^x \equiv y \mod p$ 를 만족하는 $x$, 즉, $\log_gy$를 구하는 문제가 이산 로그 문제(Discrete Logarithm Problem)이다.
-위 식에서 소수 $p$가 충분히 클 때 $g$와 $x$로부터 $y$를 구하는 것은 쉽지만, $g$와 $y$로부터 $x$를 구하는 것은 어렵다는 성질이 있다. 이러한 성질을 이용한 암호 시스템이 [[ElGamal]]과 [[Diffie-Hellman]]등이 있다.
+A general logarithm is the inverse function of an exponential function, representing the power to which a fixed base must be raised to obtain a given number. That is, it refers to the value $x$ that satisfies $a^x = b$.
+
+A discrete logarithm has the same form as a general logarithm but is defined in the discrete algebraic structure of group theory. The simplest form of a discrete logarithm is defined in $Z_p^*$. Let's consider the set $Z_p^* = {1, ..., p-1}$, which is closed under multiplication modulo a prime number $p$. Given an element $g$ and $y$ in $Z^*_p$, the discrete logarithm problem (DLP) is to find $x$ such that $g^x \equiv y \mod p$, i.e., to compute $\log_g y$.
+
+When the prime $p$ is sufficiently large, it is easy to compute $y$ from $g$ and $x$, but it is difficult to find $x$ from $g$ and $y$. Cryptographic systems such as [[ElGamal]] and [[Diffie-Hellman]] exploit this property.
