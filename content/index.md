@@ -10,6 +10,7 @@ We have the following categories in this wiki:
 - [[Basic Algebra]]: Basic algebra necessary to understand the fundamentals of cryptography.
 - [[Basic Cryptography]]: An introduction to cryptographic principles and techniques.
 - [[Privacy Enhancing Technologies (PET)]]: Advanced cryptography focused on privacy protection.
+- [[Blockchain]]: An introduction to blockchain technology, its structure, and its applications.
 
 If you find any inaccuracies or issues with the management of this wiki, please contact us via email at <decipher@contact.ac>.
 
