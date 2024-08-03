@@ -1,9 +1,9 @@
-# 정의
-[[Ring]](환) $(R, +, \cdot)$과 [[Ideal]](아이디얼) $I$가 주어졌을 때, $R/I$에 대해 다음과 같은 연산을 정의하면 이 또한 환이 되며, 이를 quotient ring(몫환)이라 부른다.
+# Definition
+Given a [[Ring]] $(R, +, \cdot)$ and an [[Ideal]] $I$, we can define operations on $R/I$ that make it a ring, called the quotient ring.
 
->[! Definition] $R/I$
->덧셈: $R/I$에서 두 동치류* $[a]$와 $[b]$의 덧셈은 $[a] + [b] = [a+b]$로 정의된다.
->곱셈: $R/I$에서 두 동치류* $[a]$와 $[b]$의 곱셈은 $[a]\cdot[b]=[a\cdot b]$로 정의된다.
->*동치류에 관해서는 [[Equivalence Relation]]을 참고
+>**Definition** $R/I$
+>- **Addition**: The addition of two equivalence classes* $[a]$ and $[b]$ in $R/I$ is defined as $[a] + [b] = [a+b]$.
+>- **Multiplication**: The multiplication of two equivalence classes* $[a]$ and $[b]$ in $R/I$ is defined as $[a] \cdot [b] = [a \cdot b]$.
+>*For more on equivalence classes, see [[Equivalence Relation]].
 
-몫환은 복잡한 대수적 구조를 단순한 형태로 축소시키는 역할을 하며, [[Ring Isomorphism]]과 같은 중요한 개념을 도출하는 데에 도움이 된다.
+The quotient ring simplifies complex algebraic structures into a more manageable form and is useful in deriving important concepts such as [[Ring Isomorphism]].
