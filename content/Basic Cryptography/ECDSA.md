@@ -1,3 +1,3 @@
-ECDSA는 [[ECDLP]]를 활용하는 키교환 방식으로 비트코인, 이더리움 등의 블록체인과 공인인증서 등에서 가장 널리 쓰이는 디지털서명 알고리즘이다.
+ECDSA is a key exchange method that utilizes the [Elliptic Curve Discrete Logarithm Problem (ECDLP)] and is the most widely used digital signature algorithm in blockchain technologies like Bitcoin and Ethereum, as well as in digital certificates.
 
-아래 그림은 ECDSA의 세가지 알고리즘을 보이고 있다. 개인키와 전자서명 $r,s$ , 메시지 해시 등은 모두 scalar 값이며 이 값들을 $G$ 혹은 공개키와 다수의 곱연산을 하게된다.
+The diagram below illustrates the three main algorithms of ECDSA. The private key, digital signature components  r  and  s , and the message hash are all scalar values, and these values are subjected to multiple multiplication operations with  G  (the base point) or the public key.

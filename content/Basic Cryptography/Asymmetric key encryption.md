@@ -1,61 +1,61 @@
-## Intro
+## Introduction
 
-공개키 암호(혹은 비대칭키 암호)는 각자 공개키와 비밀키로 구성된 한 쌍의 키를 가지고 있고, 비밀키를 공유하지 않고 각자의 공개키만으로 암호화와 복호화가 가능한 암호이다.
+Public key cryptography (also known as asymmetric key cryptography) is a system where each participant possesses a pair of keys: a public key and a private key. Encryption and decryption are possible using only the public keys, without sharing private keys.
 
-공개키 암호는 기존 대칭키 암호의 취약점을 보완하고자 고안되었다. 대칭키 암호에서는 서로 키를 교환해야 하는데 이 과정에서 키가 탈취당하는 위험이 있다. 그러나 공개키 암호는 각자의 비밀키를 교환하지 않기 때문에 그러한 리스크를 없앨 수 있다.
+Public key cryptography was developed to address the vulnerabilities of traditional symmetric key cryptography. In symmetric key cryptography, there is a risk of the key being intercepted during exchange, since both parties need to exchange keys. However, in public key cryptography, the risk is eliminated because private keys are not exchanged.
 
-또한, 대칭키 암호는 통신의 참여자 수가 늘어날수록 요구되는 키의 개수가 기하급수적으로 증가한다. 가령, 통신의 참여자가 $n$명인 경우, 대칭키 암호는 각각의 참여자들끼리의 통신마다 키가 생성되어야 하기 때문에 $n(n-1)\over 2$ 개의 키가 필요하지만, 공개키 암호의 경우 각자가 한 쌍의 키만 가지면 되므로 $2n$개의 키만 있으면 된다.
+Moreover, the number of keys required in symmetric key cryptography increases exponentially as the number of participants increases. For instance, if there are \( n \) participants, symmetric key cryptography requires \(\frac{n(n-1)}{2}\) keys, as a key needs to be generated for each communication between participants. In contrast, in public key cryptography, each participant only needs one pair of keys, so only \( 2n \) keys are needed.
 
-## Public key system
+## Public Key System
 
-공개키 암호은 기존의 암호학 상식을 뛰어넘는 혁신적인 발상으로 1976년 _Diffie_와 _Hellman_이 발표한 논문 [*New directions in cryptograpy](https://ee.stanford.edu/~hellman/publications/24.pdf)* 에서 최초로 제안되었다.
+Public key cryptography was an innovative concept that went beyond the traditional understanding of cryptography. It was first proposed in the 1976 paper [*New Directions in Cryptography*](https://ee.stanford.edu/~hellman/publications/24.pdf) by Diffie and Hellman.
 
-다음은 공개키 암호의 이해를 돕기위해 나타낸 비유적인 과정이다.
+The following is a metaphorical process to help understand public key cryptography.
 
-![[public_key(1).png]]
+![Public Key Process Step 1](public_key(1).png)
 
-앨리스(Alice)는 어떤 메시지를 밥(Bob)에게 공개키 암호방식을 이용하여 보내려고 한다. 앨리스와 밥은 각자의 프라이빗키와 퍼블릭키 한 쌍씩을 가지고있다. 이때, 퍼블릭키를 자물쇠, 프라이빗키를 열쇠라고 생각해보자.
+Alice wants to send a message to Bob using a public key cryptography system. Alice and Bob each have a pair of private and public keys. Let's think of the public key as a lock and the private key as a key.
 
-![[public_key(2).png]]
+![Public Key Process Step 2](public_key(2).png)
 
-앨리스는 평문을 상자에 담아 자신의 자물쇠(앨리스의 퍼블릭키)로 잠근 뒤 밥에게 보낸다.
+Alice puts the plaintext in a box, locks it with her lock (Alice’s public key), and sends it to Bob.
 
-![[public_key(3).png]]
+![Public Key Process Step 3](public_key(3).png)
 
-밥은 앨리스에게 받은 상자에 자신의 자물쇠(밥의 퍼블릭키)도 잠그고 다시 앨리스에게 보낸다.(즉, 상자는 현재 앨리스와 밥의 자물쇠 두개가 모두 잠겨있는 상태이다.)
+Bob locks the box he received from Alice with his lock (Bob’s public key) and sends it back to Alice. (At this point, the box is locked with both Alice's and Bob's locks.)
 
-![[public_key(4).png]]
+![Public Key Process Step 4](public_key(4).png)
 
-앨리스는 두개의 자물쇠로 잠겨있는 상자에서 자신의 열쇠(프라이빗키)를 이용해 자신의 자물쇠만 잠금해제한뒤 다시 밥에게 보낸다.
+Alice uses her key (private key) to unlock her lock from the box and sends it back to Bob.
 
-![[public_key(5).png]]
+![Public Key Process Step 5](public_key(5).png)
 
-마지막으로 상자에는 밥의 자물쇠만 잠겨있으므로 자신의 자물쇠만 해제하면 상자안의 평문을 볼 수 있다.
+Finally, Bob unlocks his lock and can see the plaintext inside the box.
 
-위 과정에서 앨리스와 밥은 서로의 프라이빗키를 교환하지 않고 평문을 안전하게 전달하였다. 이러한 컨셉을 이용한 것이 공개키 암호이다. 즉, 기존의 암호는 하나의 자물쇠를 서로 같은 키를 공유하여 암호문을 전달했다면, 공개키 암호는 위와 같이 서로 다른 자물쇠와 키를 사용한다는 개념이다.
+Throughout this process, Alice and Bob securely exchanged plaintext without sharing their private keys. This concept is the foundation of public key cryptography. Unlike traditional cryptography, which involves a single lock and shared key, public key cryptography uses different locks and keys as demonstrated above.
 
-다만, 이는 이해를 돕기위한 간략한 예시이고, 실제 통신에서 쓰이는 공개키 암호는 다양한 방식의 암호학적 프로토콜로 구성되어있다.
+This is a simplified example for understanding, and the public key cryptography used in actual communication involves various cryptographic protocols.
 
-## Types of Public Key System
+## Types of Public Key Systems
 
-공개키 암호에는 여러 종류의 프로토콜이 있다.
+There are several types of protocols in public key cryptography.
 
-1. [[RSA]]
+1. **RSA**
 
-    RSA는 가장 널리 사용되는 공개키 암호 중 하나이다. RSA는 큰 소수를 사용하여 키를 생성하고, IFP(Integer Factorization Problem, 합성수의 소인수분해 문제)에 기반한 보안성을 가지고 있다 주로 데이터 암호화와 디지털 서명에 사용된다.
+   RSA is one of the most widely used public key cryptosystems. RSA generates keys using large prime numbers and is based on the security of the Integer Factorization Problem (IFP). It is mainly used for data encryption and digital signatures.
 
-2. [[Diffie-Hellman]]
+2. **Diffie-Hellman**
 
-    Diffie-Hellman 키 교환은 두 사용자가 공개적으로 키를 교환하여 공통의 비밀 키를 생성할 수 있도록 하는 프로토콜이다. 두 사용자는 서로의 공개 키를 사용하여 비밀 키를 생성하지만, 이 과정에서 비밀 키 자체는 교환되지 않는다.
+   The Diffie-Hellman key exchange is a protocol that allows two users to generate a shared secret key through public key exchange. Users generate the secret key using each other's public keys, but the secret key itself is not exchanged.
 
-3. [[ElGamal]]
+3. **ElGamal**
 
-    Elgamal 암호는 Diffie-Hellman 키 교환 방식에 기초하여 만들어졌으며, 메세지의 암호화와 디지털 서명에 사용할 수 있다. Elgamal의 보안성은 DLP(Discrete Logarithm Problem), 이산 로그 문제에 기반한다.
+   ElGamal encryption is based on the Diffie-Hellman key exchange and can be used for message encryption and digital signatures. The security of ElGamal relies on the Discrete Logarithm Problem (DLP).
 
-4. [[Elliptic Curves#Elliptic Curve Cryptography]]
+4. **Elliptic Curves / Elliptic Curve Cryptography (ECC)**
 
-    ECC(타원 곡선 암호)는 이산 로그 문제 중 타원 곡선에 기반한 [[ECDLP]](Elliptic Curve Discrete Logarithm Problem)을 기반으로 하는 시스템이다. 다른 프로토콜에 비해 비교적 작은 길이의 키를 사용하면서 높은 수준의 보안성을 제공하기 때문에 제한된 자원을 가진 모바일이나 블록체인과 같은 환경에서 널리 사용된다.
+   ECC (Elliptic Curve Cryptography) is a system based on the Elliptic Curve Discrete Logarithm Problem (ECDLP), which is a type of discrete logarithm problem on elliptic curves. It provides a high level of security with relatively short key lengths compared to other protocols, making it popular in environments with limited resources, such as mobile devices and blockchain.
 
-## Comparison with [[Symmetric key encryption]]
-Refer to [[Symmetric key encryption#Comparison with Asymmetric key encryption]]
+## Comparison with Symmetric Key Encryption
 
+Refer to the section "Comparison with Asymmetric Key Encryption" under Symmetric Key Encryption.
