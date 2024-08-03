@@ -1,80 +1,85 @@
-타원곡선(Elliptic Curve)은 아래 그림과 같은 형태로 흔히 알려진 “타원형”과는 전혀 다른 꼴이지만, 타원곡선이라는 이름이 붙은 것은 타원의 둘레를 구하는 적분에서 이런 형태의 곡선이 유도 되었기 때문이다.
+An elliptic curve, as shown in the figure below, differs significantly from the commonly known "elliptical" shape. The name "elliptic curve" originates from the type of curve derived from the integral used to calculate the circumference of an ellipse.
 ![[ec(1).png]]
->타원곡선의 유도 과정과 더 자세한 내용은 다음 저서를 참고: [J. Silverman, “The Arithmetic of Elliptic Curves” (Springer, 1986)](https://link.springer.com/book/10.1007/978-0-387-09494-6)
+> For the derivation process and more detailed information about elliptic curves, refer to: [J. Silverman, “The Arithmetic of Elliptic Curves” (Springer, 1986)](https://link.springer.com/book/10.1007/978-0-387-09494-6)
 
-타원곡선은 해석학, 기하학, 대수학 등 수학 전반에서 쓰이는 중요한 개념 중 하나인데, 이 아티클은 암호학에서의 활용에 초점을 두어 작성하였다. 컴퓨터의 계산 성능이 높아지면서 [RSA](/be882d573c4c47a09ec80059c05f36d9?pvs=25)와 [ELGamal과](/2e89613d942f4f0ab69212e5505b5af4?pvs=25) 같은 기존의 [공개 키 암호](/307e617e819d41bcb9eb5177668527cd?pvs=25)방식은 안전성을 확보하기 위해 점점 더 많은 계산량이 요구되었다. 타원곡선을 활용하면 이러한 문제점들을 보완할 수 있기 때문에 현재 여러 암호 시스템에서 사용하고 있고, 따라서 타원곡선은 현대 암호학을 이해하기 위한 중요한 토대이다.
+Elliptic curves are an important concept used in various fields of mathematics, including analysis, geometry, and algebra. This article focuses on their application in cryptography. As computing power increased, traditional public key cryptography methods such as [RSA](/be882d573c4c47a09ec80059c05f36d9?pvs=25) and [ElGamal](/2e89613d942f4f0ab69212e5505b5af4?pvs=25) required more computations to ensure security. By using elliptic curves, these issues can be mitigated, which is why elliptic curves are currently used in various cryptographic systems. Understanding elliptic curves is crucial for modern cryptography.
 
-## Short Weierstrass form
+## Short Weierstrass Form
 
-타원곡선의 일반적인 정의는 다음과 같은 복잡한 형태이다.
-$$Ax^3 + Bx^2y + C xy^2 + Dy^3 + Ex^2 + Fxy + Gy^2 + Hx + Iy + J = 0$$
+The general definition of an elliptic curve is in a complicated form:
+$$Ax^3 + Bx^2y + Cxy^2 + Dy^3 + Ex^2 + Fxy + Gy^2 + Hx + Iy + J = 0$$
 ![[ec(2).png]]
-한편, 암호학에서 주로 사용하는 타원곡선의 형태은 다음과 같은 Short Weierstrass form이다.
+However, the form commonly used in cryptography is the Short Weierstrass form:
 $$y^2 = x^3 + ax + b \; (4a^3 + 27b^2 \ne 0)$$
->두번째 조건 $4a^3 + 27b^2 ≠ 0$ 은 중근을 갖지 않기 위한 조건으로, 중근을 갖게 되면 다음과 같은 특이점(Singular point)을 갖는 곡선이 된다.![[ec(3).png]]
+>The second condition, $4a^3 + 27b^2 ≠ 0$, prevents the curve from having a double root, which would create a singular point on the curve.
+![[ec(3).png]]
 
-## 타원곡선 군
+## Elliptic Curve Group
 
-위와 같은 형태의 타원곡선으로부터 [아벨리안 덧셈 군](https://en.wikipedia.org/wiki/Abelian_group)을 정의할 수 있다.
+From the elliptic curve in the above form, we can define an [Abelian group](https://en.wikipedia.org/wiki/Abelian_group).
 
-아벨리안 덧셈 군이 정의되기 위해서는 덧셈연산에 대해 닫혀있는 집합이 정의되어야하고, 다음 4가지 조건을 만족해야한다.
+For a set to be defined as an Abelian group under addition, it must be closed under the addition operation and satisfy the following four conditions:
 
-1. 결합 법칙(Associativity)
-2. 항등원(Identity element)
-3. 역원(Inverse element)
-4. 교환 법칙(Commutativity)
+1. Associativity
+2. Identity element
+3. Inverse element
+4. Commutativity
 
-### 타원곡선 군의 덧셈
+### Addition in the Elliptic Curve Group
 
-위에서 언급한 바와 같이 타원곡선 군을 정의하기 위해서는 덧셈연산에 대해 닫혀있는 집합이 정의되어야한다. 우선 타원곡선 군의 집합은 타원곡선 상의 모든 점들이다. 그런데 일반적인 좌표평면 상의 점들의 덧셈을 덧셈 연산으로 정의하게 되면 타원곡선 점들의 집합이 덧셈 연산에 대해 닫혀있지 않음을 알 수 있다. 따라서 타원곡선 군에서는 특별한 덧셈 연산을 다음과 같이 새롭게 정의한다.
+To define an elliptic curve group, we need a set that is closed under the addition operation. The set of an elliptic curve group consists of all points on the elliptic curve. If we define addition of points on a general coordinate plane, the set of points on the elliptic curve is not closed under this operation. Therefore, a special addition operation is newly defined as follows:
 
 ![[ec(4).png]]
 *Elliptic Curve Cryptography - Andrea Corbellini, 2015*
 
-타원곡선은 특이한 성질을 가지고 있는데, 타원곡선의 어떤 두 점을 지나는 직선은 반드시 또 다른 점을 지난다. 타원곡선 위의 두점 $P(x_1, y_1), Q(x_2, y_2)$, 그리고 두점을 지나는 직선을 $l$ 이라고 하고, 직선 $l$이 지나는 타원곡선 위의 $P, Q$ 가 아닌 또 다른 점을 $R$이라고 하면, $P+Q+R = O$ 이고, $P + Q = -R$ 이다. 즉, $-R$이 점 $P,Q$를 더한 점이 된다. 여기서 점 $R$을 $x$축 대칭한 점이 $-R$이 되는 이유는 항등원과 역원의 정의 때문인데 바로 뒤에서 서술하겠다.
+An elliptic curve has a unique property: a line passing through any two points on the curve intersects the curve at exactly one additional point. Given two points $P(x_1, y_1)$ and $Q(x_2, y_2)$ on the elliptic curve, and a line $l$ passing through these points, let $R$ be the other point of intersection of $l$ with the curve. Then, $P+Q+R = O$, and $P + Q = -R$. Here, $-R$ is the point obtained by reflecting $R$ across the x-axis. This reflection is due to the definitions of the identity and inverse elements, which will be discussed shortly.
 
-### 무한 원점 (Point at infinity)
+### Point at Infinity
 
-위와 같이 덧셈 연산을 정의 했을 때, 덧셈에 대해 닫혀있지 않은 것 같은 경우가 있다. 그림에서 점 $R$과 $-R$처럼 서로 $x$축에 대해 대칭인 두 점을 지나는 직선은 또 다른 점에서 만나지 않는 것 처럼 보인다. 여기서 타원곡선 군의 항등원인 무한 원점 $O$ (Point at infinity)를 정의할 수 있다. 무한 원점이란 y축에 평행한 모든 직선이 만나는 y좌표가 무한대인 가상의 점이다. 즉, 위 그림에서 점 $R$과 $-R$을 지나는 직선은 항등원인 무한 원점 $O$를 지나게 된다. 다시 말해 항등원과 역원의 정의에 따라 $R + (-R) = O$이고, R에 대해 x축 대칭인 $-R$이 $R$의 덧셈에 대한 역원이 된다.
+There are cases where the set seems not closed under addition as defined above. For example, a line passing through points $R$ and $-R$, which are symmetric with respect to the x-axis, does not appear to intersect another point. Here, we define the identity element of the elliptic curve group, the point at infinity $O$. The point at infinity is an imaginary point at which all lines parallel to the y-axis meet. Thus, a line passing through points $R$ and $-R$ intersects the identity element $O$ at infinity. According to the definitions of the identity and inverse elements, $R + (-R) = O$, and $-R$ is the inverse of $R$ under addition.
 
-따라서 실수체에서의 타원곡선은 다음과 같이 정의 할 수 있다.
+Thus, an elliptic curve over the real numbers can be defined as:
 $$\{(x,y) \in \mathbb{R}^2 \; | \; y^2 = x^3 + ax + b, 4a^3 + 27b^2 \ne 0 \} \; \cup \; \{O\}$$
 
-### 타원곡선 덧셈의 대수적 연산
+### Algebraic Operations for Elliptic Curve Addition
 
-$P(x_1, y_1) + Q(x_2,y_2)$은 대수적으로 다음과 같은 연산이다.
+$P(x_1, y_1) + Q(x_2,y_2)$ can be computed algebraically as follows:
 
-$P, Q$ 를 지나는 직선과 $E$(타원곡선)의 교점을 구한뒤 $x$축 대칭 시켜서 값을 구할 수 있다. 다음은 $P, Q$의 경우에 따라 계산을 한 결과이다. (단, $m$은 $P, Q$ 를 지나는 직선의 기울기이고, $P, Q$ 를 지나는 직선과 $E$와의 교점은 $R(x_3, y_3)$이다.)
+The line passing through points $P$ and $Q$ intersects the elliptic curve $E$ at another point, which is then reflected across the x-axis to find the result. The calculations vary depending on the cases of $P$ and $Q$:
 
-1. $P, Q \ne O, \; P \ne Q$ 인 경우 → $P + Q = (m^2-x_1-x_2, \; m(x_1-x_3)-y_1), \; m=(y_2- y_1)(x_2-x_1){-1\atop}$
+1. If $P, Q \ne O$ and $P \ne Q$:
+   $$P + Q = (m^2-x_1-x_2, \; m(x_1-x_3)-y_1), \; m=\frac{y_2- y_1}{x_2-x_1}$$
 
-2. $P+Q = O$ 인 경우 → $P, Q$ 의 $x$좌표가 같으면 $P + Q = O$
+2. If $P+Q = O$:
+   The x-coordinates of $P$ and $Q$ are the same, so $P + Q = O$
 
-3. $P = Q$ 인 경우 ($P$를 지나는 $E$ 위의 접선을 통해 구함, 접선은 미적분학의 편미분을 통해 구함) → $P + P = 2P = (m^2 - 2x_1, \; m(x_1-x_3) - y_1), \; m= (3x_1^2 + a)(2y_1){-1\atop} \pmod{p}$
+3. If $P = Q$ (tangent to the curve at $P$, computed using partial derivatives):
+   $$P + P = 2P = (m^2 - 2x_1, \; m(x_1-x_3) - y_1), \; m= \frac{3x_1^2 + a}{2y_1}$$
 
-4. $Q = O \rightarrow P+Q = P+O = P, \; O+O=O$
+4. If $Q = O$:
+   $$P+Q = P+O = P, \; O+O=O$$
 
-## Elliptic curves in $𝔽_p$(유한체에서 정의된 타원곡선)
+## Elliptic Curves in $𝔽_p$ (Elliptic Curves Defined Over Finite Fields)
 
-유한체 상의 타원곡선 군은 실수체에서의 타원곡선 군과 동일한 개념이지만 원소의 개수가 유한하다. 위에서 살펴본 타원곡선을 [유한체](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%95%9C%EC%B2%B4)에서 정의하면 다음과 같다:
+Elliptic curve groups over finite fields share the same concept as those over the real numbers but have a finite number of elements. When defined over a [finite field](https://ko.wikipedia.org/wiki/%EC%9C%A0%ED%95%9C%EC%B2%B4), an elliptic curve is given by:
 $$\{(x,y) \in (𝔽_p)^2 \; | \; y^2 \equiv x^3 + ax + b \pmod{p}, 4a^3 + 27b^2 \not\equiv 0 \pmod{p} \} \; \cup \; \{O\}$$
->Order of an elliptic curve group(타원곡선 군의 위수) 유한체에서 정의된 타원곡선은 유한한 개수의 점을 가지는데 이때 집합의 개수를 위수(Order)라고 한다. 이때 [Schoof’s Algorithm](https://en.wikipedia.org/wiki/Schoof%27s_algorithm)으로 타원곡선의 위수를 구할 수 있다. 실제로 유한체에서의 타원곡선을 보면 아래 그림과 같은데, 위에서 봤던 실수체에서의 모양과는 또 다른 형태임을 알 수 있다. 단, 이때 위수가 2 또는 3인 특수한 경우는 다루지 않는다. (점 형태로 변환이 불가능한 경우 발생)
-
+>Order of an elliptic curve group: An elliptic curve defined over a finite field has a finite number of points, called the order of the set. The order can be computed using [Schoof’s Algorithm](https://en.wikipedia.org/wiki/Schoof%27s_algorithm). When visualized, elliptic curves over finite fields appear as in the following figure, different from those over the real numbers. Special cases with order 2 or 3 are not considered here.
 ![[ec(5).png]]
 
-위 그림은 $y^2 \equiv x^3 -7x + 10 \pmod{p}$ 에서 차례대로 $p=19,\ 97,\ 127,\ 487$ 을 적용한 결과이다. 위 그래프들을 자세히 보면 $y=p/2$ 에서 대칭임을 알 수 있다.
+The figure shows elliptic curves of $y^2 \equiv x^3 -7x + 10 \pmod{p}$ for $p=19,\ 97,\ 127,\ 487$. Notably, these graphs are symmetric about $y = p/2$.
 
-그렇다면 유한체에서 정의된 타원곡선에서의 덧셈연산 위에서 보았던 실수체 타원곡선의 덧셈은 유한체 상에서는 어떻게 적용할까?
+### Addition in Finite Field Elliptic Curves
+
+The addition operations in elliptic curves over finite fields are similar to those over the real numbers, but the geometric interpretation differs slightly. The figure below illustrates the addition operation in the elliptic curve $y^2 \equiv x^3 -x+3 \pmod{127}$, where $P(16,20)$ and $Q(41,120)$ are added.
 ![[ec(6).png]]
-산술적인 연산은 실수체에서와 거의 동일하지만, 기하적으로 덧셈을 살펴보면 그 형태가 약간 다른것을 볼 수 있다. 위 그림은 $y^2 \equiv x^3-x+3 \pmod{127}$ 에서 $P(16,20)$ 와 $Q(41,120)$ 를 덧셈 연산한 결과이다.
 
-$P,Q$ 를 지나는 직선은 $y \equiv 4x + 83 \pmod{127}$ 인데 유한체에서 이 직선은 위 그림과 같은 형태라고 할 수 있다.
+The line passing through $P$ and $Q$ in the finite field is given by $y \equiv 4x + 83 \pmod{127}$.
 
 ### Scalar Multiplication
 
-유한체에서 정의된 타원곡선 군에서는 다음과 같은 스칼라 곱 연산이 가능하다.
+Scalar multiplication in elliptic curve groups defined over finite fields is performed as follows:
 $$\underbrace{nP = P + P + ... + P}_{n \; times}$$
-타원곡선 군의 스칼라 곱은 동일한 점에 대해 스칼라만큼 덧셈연산을 반복하는 연산인데, 어떤 점을 반복해서 더하게 되면 특정 주기에 따라 값이 반복되는 특징이 있다. 예를 들어 $y^2 \equiv x^3 + 2x + 3 \pmod{97}$ 이고 $P = (3, 6)$ 일때 곱셈연산을 하면 다음과 같다.
+This operation repeatedly adds the same point according to the scalar value. For example, with $y^2 \equiv x^3 + 2x + 3 \pmod{97}$ and $P = (3, 6)$, the multiplication results are as follows:
 ![[ec(7).png]]
 $OP = (0, 0)$
 $OP = (0, 0)$ $1P = (3,6)$
@@ -86,9 +91,4 @@ $6P = (3,6)$
 $7P = (80,10)$
 ...
 
-이렇게 스칼라 곱의 주기에 의해 만들어진 점들의 집합을 순환부분군(Cyclic subgroup)이라고 한다. 최초에 주어진 점 $P$를 생성원(Generator)라고 하고 부분군이 반복되는 주기인 $n$(위 예시의 경우 5)를 부분군의 위수라고 한다.
-
-## Elliptic Curve Cryptography
-타원곡선을 기반으로 [[ECDSA]]와 같은 전자서명 알고리즘은 대부분 이런 타원곡선의 순환부분군의 성질을 이용한다. 위수가 충분히 큰 타원곡선 군으로부터 적절한 생성원을 추출하면, 랜덤하게 뽑은 스칼라 값이 개인키가 되고 둘을 개인키와 생성원을 스칼라 곱한 점이 공개키가 된다.
-
->생성원 설정에 따른 보안성과 퍼포먼스는 다음을 참고: [Point Generation ANd Base Point Selection In ECC: An Overview](https://ijarcce.com/wp-content/uploads/2012/03/IJARCCE7J-a-moumita-Point-Generation-And-Base.pdf)
+The set of points generated by scalar multiplication forms a cyclic subgroup, with the initial point $P$ as the generator. The period of repetition $n$ (5 in this example) is the order of the subgroup

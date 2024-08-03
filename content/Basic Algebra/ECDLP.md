@@ -1,10 +1,10 @@
-ECDLP(Elliptic Curve Discrete Logarithm Problem)는 $Z_p^*$에서의 [[Discrete logarithm problem]]와 같은 방식을 [[Elliptic Curves]](타원곡선) 상에서 정의한 문제이다.
+The Elliptic Curve Discrete Logarithm Problem (ECDLP) is defined similarly to the [[Discrete Logarithm Problem]] in $Z_p^*$ but on the structure of [[Elliptic Curves]].
 
-- $E: y^2 = x^3 + ax + b$ 일때 $G \in E$ 를 generator로 하는 cyclic subgroup $H = <G>$ 라고하자.
-- $H$의 임의의 원소 $Q$에 대해, $aG = Q$ 인 $a$ $(0 \le a < |G| )$ 를 찾는 문제이다.
+-   Given an elliptic curve $E: y^2 = x^3 + ax + b$ and a generator $G \in E$, we form a cyclic subgroup $H = <G>$.
+-   For any element $Q$ in $H$, the problem is to find $a$ $(0 \le a < |G| )$ such that $aG = Q$.
 
-ECDLP를 사용하는 이유
+Reasons to use ECDLP:
 
-- 일반적인 DLP보다 훨씬 짧은 키 사이즈로도 안전성을 확보할수 있다.
+-   It provides security with much shorter key sizes compared to the general DLP.
     
-- $Z_p^*$ 에서 정의된 DLP의 해를 구하는 알고리즘(Index Calculus Algorithm)이 존재하는반면, EC-DLP의 경우 Generic 알고리즘만 알려져있고 ECDLP에 특화된 알고리즘은 현재까지 발견되지 않았다. (Baby-step Giant -step, Pollard $p$ → $O(\sqrt{p})$의 공격량이 필요)
+-   While there are algorithms (like the Index Calculus Algorithm) to solve the DLP defined in $Z_p^*$, for ECDLP only generic algorithms are known. No specific algorithms for ECDLP have been discovered to date. Attacks like Baby-step Giant-step and Pollard's rho algorithm require $O(\sqrt{p})$ operations.
