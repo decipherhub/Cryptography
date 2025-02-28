@@ -21,6 +21,7 @@
 - [[Merkle Tree]]
 - [[Digital Signature]]
 - [[Schnorr Signature]]
+- [[Nonce]]
 - [[ChaCha20]]
 - [[General LWE]]
-- [[Feistel Cipher]]
+- [[Feistel cipher]]
