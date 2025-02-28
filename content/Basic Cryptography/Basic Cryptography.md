@@ -23,3 +23,4 @@
 - [[Schnorr Signature]]
 - [[ChaCha20]]
 - [[General LWE]]
+- [[Feistel Cipher]]

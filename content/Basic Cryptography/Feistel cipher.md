@@ -38,7 +38,8 @@ $L'_0$ is XORed with $F(k, R'_0)$, resulting in the left half of the plaintext $
 The decryption process can be represented mathematically as follows:
 $$
 L'_1 = L'_0 \oplus F(k, R'_0)
-$$$$
+$$
+$$
 R'_1 = R'_0
 $$
 
