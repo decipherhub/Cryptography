@@ -13,7 +13,7 @@ It achieves security based on the hardness of integer factorization of large num
 > For more details, see [[Asymmetric key encryption]].
 
 - In 1976, Diffie and Hellman first introduced the concept of “public-key cryptography” to the world.
-- In 1978, Rivest, Shamir, and Adleman proposed **RSA**, which quickly gained prominence.
+- In 1978, Rivest, Shamir, and Adleman proposed **[[RSA]]**, which quickly gained prominence.
 - Shortly thereafter, in 1979, **Michael O. Rabin** introduced the **Rabin cryptosystem**, which, while similar to RSA, incorporates a distinct mathematical structure.
 
 

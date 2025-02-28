@@ -22,3 +22,4 @@
 - [[Digital Signature]]
 - [[Schnorr Signature]]
 - [[General LWE]]
+- [[Rabin Cryptosystem]]
