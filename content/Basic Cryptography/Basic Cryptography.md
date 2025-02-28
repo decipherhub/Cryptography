@@ -24,3 +24,8 @@
 - [[SHA]]
 - [[ECC]]
 - [[Hash Functions]]
+- [[General LWE]]
+- [[Rabin Cryptosystem]]
+- [[Nonce]]
+- [[ChaCha20]]
+- [[Feistel cipher]]
