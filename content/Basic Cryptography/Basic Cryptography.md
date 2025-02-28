@@ -23,3 +23,7 @@
 - [[Schnorr Signature]]
 - [[General LWE]]
 - [[Rabin Cryptosystem]]
+- [[Nonce]]
+- [[ChaCha20]]
+- [[General LWE]]
+- [[Feistel cipher]]
