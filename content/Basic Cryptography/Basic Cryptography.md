@@ -21,4 +21,5 @@
 - [[Merkle Tree]]
 - [[Digital Signature]]
 - [[Schnorr Signature]]
+- [[ChaCha20]]
 - [[General LWE]]
