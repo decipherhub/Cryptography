@@ -19,3 +19,4 @@
 - [[Merkle Tree]]
 - [[Digital Signature]]
 - [[Schnorr Signature]]
+- [[Feistel Cipher]]
