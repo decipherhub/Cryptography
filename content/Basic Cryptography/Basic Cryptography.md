@@ -12,6 +12,8 @@
 - [[ElGamal]]
 - [[ECDSA]]
 - [[Post-Quantum Cryptography]]
+- [[Shor's Algorithm]]
+- [[Grover’s Algorithm]]
 - [[Learning with Errors(LWE)]]
 - [[Ring Learning with Errors(RLWE)]]
 - [[Module Learning with Errors(MLWE)]]
@@ -20,3 +22,4 @@
 - [[Digital Signature]]
 - [[Schnorr Signature]]
 - [[ChaCha20]]
+- [[General LWE]]
