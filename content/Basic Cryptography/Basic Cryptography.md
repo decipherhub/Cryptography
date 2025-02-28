@@ -21,6 +21,8 @@
 - [[Merkle Tree]]
 - [[Digital Signature]]
 - [[Schnorr Signature]]
+- [[General LWE]]
+- [[Rabin Cryptosystem]]
 - [[Nonce]]
 - [[ChaCha20]]
 - [[General LWE]]
