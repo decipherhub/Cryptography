@@ -2,7 +2,13 @@
 ## Intro
 PKI (Public Key Infrastructure) is an infrastructure system that uses public key cryptography to securely exchange information in electronic environments and protect the identity and data of users. PKI is a comprehensive infrastructure that encompasses a series of policies, procedures, software, hardware, cryptographic techniques, and more, carried out between an organization responsible for issuing and managing certificates (Certificate Authority, CA) and the user (or organization) that operates the pair of public and private keys.
 
-In general, in symmetric key cryptosystems, users must use a pre-shared secret value to exchange keys. Alternatively, protocols such as Diffie-Hellman key exchange can be applied without a pre-shared secret value, but there is a possibility of exposure to man-in-the-middle attacks, so it is not considered a completely safe method. Another approach involves using a Key Distribution Center (KDC) to share a secret key, which relies on a trusted third party. However, as the number of users or system terminals increases and the variety of secret keys grows, there is a greater likelihood that the system could become overloaded during key management and distribution.
+In general, in symmetric key cryptosystems, users must use a pre-shared secret value to exchange keys. Alternatively, protocols such as Diffie-Hellman key exchange can be applied without a pre-shared secret value, but there is a possibility of exposure to man-in-the-middle attacks, so it is not considered a completely safe method.
+> [!Question] What is the **Diffie-Hellman key exchange protocol**?
+> The Diffie-Hellman protocol is a representative key agreement protocol, designed based on the difficulty of the discrete logarithm problem. In simple terms, each of the two parties chooses a secret value based on a previously agreed-upon prime number $p$ and a primitive root $g$. They then exchange the results of exponentiating $g$ by their respective secret values, and exponentiate the received values again using their own secret values. As a result, both parties compute the same value, which becomes the securely shared secret key.
+> 
+> For more details, see [[Diffie-Hellman]].
+
+Another approach involves using a Key Distribution Center (KDC) to share a secret key, which relies on a trusted third party. However, as the number of users or system terminals increases and the variety of secret keys grows, there is a greater likelihood that the system could become overloaded during key management and distribution.
 
 On the other hand, if a public key cryptosystem is applied, users do not necessarily have to go through a trusted authority, and they only need to manage their own private key securely. As a result, it becomes relatively simple and safe to design a key exchange protocol.
 
@@ -12,7 +18,7 @@ On the other hand, if a public key cryptosystem is applied, users do not necessa
 In a public key cryptosystem, the most important aspect is to securely publish the public key. For example, suppose Bob has published his public key on the internet. Alice can obtain Bob’s public key from the internet in order to send him a message. However, if there is no way for Alice to verify that the public key she obtained truly belongs to Bob, a problem arises. If a malicious attacker disguises their own public key as though it were Bob’s, then any message Alice sends would go to the attacker instead of Bob, posing a serious security threat.
 
 ### Publishing Public Keys through a Trusted Server
-To address the issue described above, one can consider publishing the public key in a secure environment via a trusted server. This trusted server verifies that Bob’s public key indeed belongs to Bob, making it very difficult for an attacker to pass off their own public key as Bob’s. For this to work, Bob must prove to the server that he really is Bob before registering his public key. Once the server verifies Bob’s identity, Bob’s public key is officially registered. This allows users to safely obtain Bob’s public key through the trusted server.  
+To address the issue described above, one can consider publishing the public key in a secure environment via a trusted server. In this scenario, Alice can request Bob's public key from the server and obtain it. This trusted server verifies that Bob’s public key indeed belongs to Bob, making it very difficult for an attacker to pass off their own public key as Bob’s. For this to work, Bob must prove to the server that he really is Bob before registering his public key. Once the server verifies Bob’s identity, Bob’s public key is officially registered. This allows users to safely obtain Bob’s public key through the trusted server.  
 However, one drawback of this method is the potential server overload if many users attempt to access it simultaneously.
 
 ### Public Key Certification via Certificates
@@ -70,20 +76,21 @@ The X.509 format is as follows:
 
 ## Operation Principle
 ### Certificate Issuance
-1. The user verifies their identity through the RA.
+Let us assume Alice wants to communicate with Bob using Bob’s public key.
+1. Bob verifies his identity through the RA.
 2. Once the RA completes the identity verification, it requests certificate issuance from the CA.
-3. The CA either instructs the user to generate a public/private key pair or generates it on the user’s behalf and then proceeds with the issuance process.
-4. The CA signs the digital certificate and issues it to the user.
+3. The CA either instructs Bob to generate a public/private key pair or generates it on Bob’s behalf and then proceeds with the issuance process.
+4. The CA signs the digital certificate and issues it to Bob.
 
 ### Certificate Usage
-Let us assume Alice wants to communicate with Bob using Bob’s public key.
+Similarly, let us assume a situation where Alice intends to communicate using Bob’s public key.
 1. Bob provides his certificate to Alice to establish secure communication.
 2. Alice verifies the validity of Bob’s certificate.
 3. If the certificate is valid, Alice uses Bob’s public key to send an encrypted message.
 4. Bob decrypts the message with his private key.
 
 ### Certificate Revocation and Renewal
-1. If necessary, the CA revokes the certificate. A revoked certificate is marked as invalid via the CRL or OCSP.
+1. In special cases—such as the exposure of a user’s private key or the disappearance of the Certificate Authority—the certificate may need to be revoked. A revoked certificate is listed on the CRL(Certificate Revocation List) or rendered invalid through OCSP(Online Certificate Status Protocol).
 > [!Question] What are **CRL** and **OCSP**?
 > A CRL (Certificate Revoked List) is a list of certificates that have been revoked before their expiration date. It is created and managed by the Certificate Authority.
 > OCSP (Online Certificate Status Protocol) checks the status of a certificate by responding to individual requests from verifiers. When there are many revoked certificates, the size of the CRL can become large, making an OCSP-based system generally more efficient.
@@ -103,4 +110,4 @@ This model places a **root CA** at the topmost level so that a tiered certificat
 ### Mesh Model
 When the network is large and complex, the **mesh model** is more appropriate.
 - In this model, multiple root CAs issue certificates to each other, establishing **mutual trust**.
-- Unlike the hierarchical model, which requires a vertical trust relationship, the mesh model is based on a **horizontal trust relationship**. If there are $n$ root CAs, the number of cross-certificates needed is $\frac{n(n-1)}{2}$.
+- Unlike the hierarchical model, which requires a vertical trust relationship, the mesh model is based on a **horizontal trust relationship**. If there are nnn root CAs, the number of cross-certificates needed is $\frac{n(n-1)}{2}$.
