@@ -110,4 +110,4 @@ This model places a **root CA** at the topmost level so that a tiered certificat
 ### Mesh Model
 When the network is large and complex, the **mesh model** is more appropriate.
 - In this model, multiple root CAs issue certificates to each other, establishing **mutual trust**.
-- Unlike the hierarchical model, which requires a vertical trust relationship, the mesh model is based on a **horizontal trust relationship**. If there are nnn root CAs, the number of cross-certificates needed is $\frac{n(n-1)}{2}$.
+- Unlike the hierarchical model, which requires a vertical trust relationship, the mesh model is based on a **horizontal trust relationship**. If there are $n$ root CAs, the number of cross-certificates needed is $\frac{n(n-1)}{2}$.
